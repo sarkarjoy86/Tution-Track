@@ -1,0 +1,47 @@
+﻿{
+  "project_info": {
+    "project_number": "59962019279",
+    "project_id": "tution-tracker-f667a",
+    "storage_bucket": "tution-tracker-f667a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59962019279:android:72ada4aac6f91a83b016ba",
+        "android_client_info": {
+          "package_name": "com.tutiontrack.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "59962019279-9n5pgpgb4631vrqq29st2794vjot5e2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tutiontrack.app",
+            "certificate_hash": "30a7fe38e3a315f55fea6cb116c36ed89c0d8683"
+          }
+        },
+        {
+          "client_id": "59962019279-hf90v2p7v6juq7htu4skcsq24aiqllo9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtjbyK749THBqI1PO059cbFGpIIeDkn_w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "59962019279-hf90v2p7v6juq7htu4skcsq24aiqllo9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

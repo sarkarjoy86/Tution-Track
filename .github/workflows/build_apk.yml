@@ -1,0 +1,50 @@
+﻿name: Build TutionTrack Release APK
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.19.x'
+          channel: 'stable'
+          cache: true
+
+      - name: Install dependencies
+        run: |
+          cd tution_track
+          flutter pub get
+
+      - name: Build APK (Split per ABI for smaller size)
+        run: |
+          cd tution_track
+          flutter build apk --release --split-per-abi
+
+      - name: Upload Arm64 Release APK (For Modern Android Phones)
+        uses: actions/upload-artifact@v4
+        with:
+          name: TutionTrack-arm64-v8a-release
+          path: tution_track/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk
+
+      - name: Upload Universal Release APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: TutionTrack-universal-release
+          path: tution_track/build/app/outputs/flutter-apk/app-release.apk
+
